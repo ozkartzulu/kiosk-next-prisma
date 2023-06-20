@@ -1,5 +1,12 @@
+
+import { KioskProvider } from '@/context/KioskProvider'
+
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Aside from '@/components/Aside'
+import ModalView from '@/components/ModalView'
+import Steps from '@/components/Steps'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +18,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <KioskProvider>
+
+          <div id='___next'>
+            <ModalView />
+
+            {children}
+          </div>
+        </KioskProvider>
+      </body>
     </html>
   )
 }
