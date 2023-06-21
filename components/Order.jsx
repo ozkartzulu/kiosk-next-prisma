@@ -9,10 +9,10 @@ const Order = ({orderProd}) => {
 
     const completeOrder = async () => {
         try {
-            const orderUpdated = await fetch(`http://localhost:3000/api/orders/${id}`, {
+            const orderUpdated = await fetch(`/api/orders/${id}`, {
                 method: 'POST',
             }).then( res => res.json())
-            console.log(orderUpdated)
+            // console.log(orderUpdated)
             toast.success('Order Ready!!!')
         } catch (error) {
             toast.error('There is a error!!!')
