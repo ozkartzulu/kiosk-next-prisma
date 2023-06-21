@@ -10,7 +10,10 @@ const Aside = () => {
 
   return (
     <>
-        <Image src='assets/img/logo.svg' priority={true} alt="Logo Image" width={300} height={100}/>
+        <Image src='assets/img/logo.svg' priority={true} 
+          alt="Logo Image" width={300} height={100}
+          className="mt-6 mb-6"
+        />
         <nav>
           {categories.map( category => <Category key={category.id} category={category} /> )}
         </nav>

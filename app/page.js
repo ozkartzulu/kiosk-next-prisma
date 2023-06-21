@@ -1,13 +1,20 @@
 
-// import useKiosk from '@/hooks/useKiosk'
-import Products from "@/components/Products"
+'use client'
+import { usePathname, useRouter } from "next/navigation"
+import { useEffect } from "react"
 
 export default async function Home() {
 
+  const pathname = usePathname()
+  const router = useRouter()
+
+  useEffect(() => {
+    router.push('/products')
+  }, [])
+
   return (
     <div className="">
-      <h1 className='text-5xl text-red-700'>jj</h1>
-      {/* <Products /> */}
+      <p></p>
     </div>
   )
 }

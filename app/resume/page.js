@@ -10,7 +10,7 @@ const Resume = () => {
     return (
         <div>
             <h1 className="text-4xl font-black">Resume</h1>
-            <p className="text-2xl my-10">Review you Order</p>
+            <p className="text-2xl mt-6 mb-8">Review you Order</p>
             {order.length === 0 ? (
                 <p className="text-center text-2xl">There is not elements in order</p>
             ) : (

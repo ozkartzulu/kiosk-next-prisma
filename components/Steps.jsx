@@ -22,7 +22,7 @@ const Steps = () => {
 
   return (
     <>
-        <div className="flex justify-between mb-5">
+        <div className="flex justify-between mb-5 mt-14">
             {steps.map( (step) => <Link 
                 key={step.step} 
                 className="text-2xl font-bold"
