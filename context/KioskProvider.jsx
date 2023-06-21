@@ -3,7 +3,7 @@
 import {useState, useEffect, createContext } from 'react'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/navigation'
-// import axios from 'axios'
+import axios from 'axios'
 
 const KioskContext = createContext()
 
@@ -78,20 +78,24 @@ function KioskProvider({children}) {
 
     const putOrder = async (e) => {
         e.preventDefault()
+        console.log('enter of putOrder')
         try {
-            const resp = await fetch('http://localhost:3000/api/orders',{
-                method: 'POST',
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({order, name, total, date: Date.now().toString()})
-            })
+            // const resp = await fetch('http://localhost:3000/api/orders',{
+            //     method: 'POST',
+            //     headers: {
+            //         "Content-Type": "application/json"
+            //     },
+            //     body: JSON.stringify({order, name, total, date: Date.now().toString()})
+            // })
 
+            await axios.post('http://localhost:3000/api/orders', {order, name, total, date: Date.now().toString()})
+            console.log('enter of try after axios')
             // reset states of app
             setCurrentCategory(categories[0])
             setOrder([])
             setName('')
             setTotal(0)
+            console.log('enter of try after resets')
 
             toast.success('Order Sent Successfully!!')
 

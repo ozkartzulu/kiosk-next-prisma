@@ -28,7 +28,7 @@ export default async function handler(req, res) {
                 date: req.body.date
             }
         })
-        res.json(orders)
+        res.status(200).json(orders)
     }
 
 }
