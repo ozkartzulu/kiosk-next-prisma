@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     // get orders
     if (req.method === 'GET') {
         try {
-            const allOrders = await prisma.order.findMany({
+            const allOrders = await prisma.ordering.findMany({
                 where: {
                     state: false
                 }
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
 
     // create order
     if (req.method === 'POST') {
-        const orders = await prisma.order.create({
+        const orders = await prisma.ordering.create({
             data: {
                 name: req.body.name,
                 total: req.body.total,

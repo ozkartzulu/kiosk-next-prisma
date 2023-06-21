@@ -6,7 +6,6 @@ import useKiosk from "@/hooks/useKiosk"
 const ProductsPage = () => {
 
     const { currentCategory } = useKiosk()
-    console.log(currentCategory, 'prod')
 
     return (
         <div className="">

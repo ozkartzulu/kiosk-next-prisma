@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
     if (req.method === 'POST') {
         const { id } = req.query
-        const orderUpdated = await prisma.order.update({
+        const orderUpdated = await prisma.ordering.update({
             where: {
                 id: parseInt(id)
             },
